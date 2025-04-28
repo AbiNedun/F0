@@ -14,7 +14,7 @@ from tkinter import ttk, messagebox
 import fastf1
 import pandas as pd
 
-from F0acq import loadrdata,visualize_track
+from .F0acq import loadrdata,visualize_track
 
 
 class TelemetryTracker:
