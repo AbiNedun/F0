@@ -5,10 +5,13 @@
 import fastf1 as ff1
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import os
 
 # Enabling cache for FastF1
-ff1.Cache.enable_cache('data/racedat')
+cache_path = os.path.abspath(os.path.expanduser('~/.local/state/f0/data/racedat'))
+if not (os.path.exists(cache_path)):
+    os.makedirs(cache_path)
+ff1.Cache.enable_cache(cache_path)
 
 def availsessions(year=None):
    
@@ -166,7 +169,6 @@ def filter_session_type(sessiondata, session_type):
 
 def visualize_track(year, event, session_type):
     
-    import matplotlib.pyplot as plt
     import numpy as np
     import fastf1
 
