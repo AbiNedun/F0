@@ -6,7 +6,7 @@
 
 # Design is not just what it looks and feels like. Design is how it works - Steve Jobs 
 
-from F0visual import TelemetryTracker
+from .F0visual import TelemetryTracker
 import tkinter
 
 def main():

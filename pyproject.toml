@@ -1,0 +1,39 @@
+[project]
+dynamic = ["version"]
+
+name = "F0"
+authors = [
+    { name = "Abi Nedun", email = "anedunbusiness@gmail.com" },
+]
+description = "F0 is a circuit and telemetry tracker for F1 Grandprix."
+readme = "README.md"
+license = "MIT"
+
+requires-python = ">=3.10"
+dependencies = [
+    "fastf1>=3.5.3",
+]
+
+[project.urls]
+homepage = "https://github.com/abinedun/F0"
+changelog = "https://github.com/abinedun/F0/releases"
+
+[project.scripts]
+F0 = "src.F0:main"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+ignore-vcs = true
+include = [
+    "src/**",
+]
+exclude = [
+    "doc/**",
+    "tests/**",
+]
